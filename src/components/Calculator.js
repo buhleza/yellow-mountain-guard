@@ -28,7 +28,6 @@ function Calculator() {
     setRequestStatus({});
   };
 
-  // Each company has a rate (R per tonne) and a tonnage range
   const allCompanies = [
     { id: 1, name: "Bafenyi African Group", request: "silica tailings (bricks)", minTonnes: 1000, maxTonnes: 8000, ratePerTonne: 8 },
     { id: 2, name: "Pan African Resources", request: "gold-bearing tailings", minTonnes: 3000, maxTonnes: 15000, ratePerTonne: 15 },
@@ -48,26 +47,20 @@ function Calculator() {
   const handleAccept = (company) => {
     setRequestStatus({
       ...requestStatus,
-      [company.id]: {
-        status: "accepted",
-        offer: company.ratePerTonne * tonnes,
-      },
+      [company.id]: { status: "accepted", offer: company.ratePerTonne * tonnes },
     });
   };
 
   const handleDecline = (company) => {
-    setRequestStatus({
-      ...requestStatus,
-      [company.id]: { status: "declined" },
-    });
+    setRequestStatus({ ...requestStatus, [company.id]: { status: "declined" } });
   };
 
   return (
-    <div style={{ background: "#0f1a12", minHeight: "100vh", padding: "40px 20px", fontFamily: "Arial", color: "#e8efe8" }}>
+    <div style={{ background: "#f4f6f8", minHeight: "100vh", padding: "40px 20px", fontFamily: "Arial", color: "#1a2a1e" }}>
       <div style={{ maxWidth: "1100px", margin: "0 auto" }}>
 
         <h1 style={{ marginBottom: "8px" }}>Recycling Value Calculator</h1>
-        <p style={{ color: "#8fa38f", marginBottom: "30px" }}>
+        <p style={{ color: "#5a6a5e", marginBottom: "30px" }}>
           Economic case for waste reprocessing
         </p>
 
@@ -76,7 +69,7 @@ function Calculator() {
           {/* LEFT PANEL */}
           <div style={{ flex: "1", minWidth: "280px" }}>
 
-            <h3 style={{ color: "#8fa38f", fontSize: "13px", letterSpacing: "1px" }}>WEEKLY INPUT</h3>
+            <h3 style={{ color: "#5a6a5e", fontSize: "13px", letterSpacing: "1px" }}>WEEKLY INPUT</h3>
             <label style={{ display: "block", marginBottom: "8px" }}>
               Tonnes of waste processed this week
             </label>
@@ -89,10 +82,10 @@ function Calculator() {
                 style={{
                   padding: "12px",
                   width: "160px",
-                  background: "#1a2a1e",
-                  border: "1px solid #2e4a34",
+                  background: "white",
+                  border: "1px solid #d0d8d0",
                   borderRadius: "6px",
-                  color: "#e8efe8",
+                  color: "#1a2a1e",
                   fontSize: "16px"
                 }}
               />
@@ -113,7 +106,7 @@ function Calculator() {
               </button>
             </div>
 
-            <p style={{ color: "#8fa38f", fontSize: "12px", marginTop: "20px", marginBottom: "8px" }}>
+            <p style={{ color: "#5a6a5e", fontSize: "12px", marginTop: "20px", marginBottom: "8px" }}>
               QUICK PRESETS
             </p>
             <div style={{ display: "flex", gap: "8px", flexWrap: "wrap" }}>
@@ -123,10 +116,10 @@ function Calculator() {
                   onClick={() => { setTonnesInput(String(preset)); setTonnes(preset); setRequestStatus({}); }}
                   style={{
                     padding: "8px 14px",
-                    background: "#1a2a1e",
-                    border: "1px solid #2e4a34",
+                    background: "white",
+                    border: "1px solid #d0d8d0",
                     borderRadius: "6px",
-                    color: "#c0d0c0",
+                    color: "#1a2a1e",
                     cursor: "pointer",
                     fontSize: "13px"
                   }}
@@ -136,10 +129,10 @@ function Calculator() {
               ))}
             </div>
 
-            <h3 style={{ color: "#8fa38f", fontSize: "13px", letterSpacing: "1px", marginTop: "30px" }}>
+            <h3 style={{ color: "#5a6a5e", fontSize: "13px", letterSpacing: "1px", marginTop: "30px" }}>
               FIXED INDUSTRY ASSUMPTIONS 🔒
             </h3>
-            <ul style={{ listStyle: "none", padding: 0, color: "#c0d0c0" }}>
+            <ul style={{ listStyle: "none", padding: 0, color: "#3a4a3e" }}>
               <li style={{ padding: "6px 0" }}>Gold per tonne: 0.1 g/t</li>
               <li style={{ padding: "6px 0" }}>Gold price: R1,400/g</li>
               <li style={{ padding: "6px 0" }}>Bricks per tonne: 30</li>
@@ -148,49 +141,48 @@ function Calculator() {
             </ul>
           </div>
 
-          {/* RIGHT PANEL - RESULTS */}
+          {/* RIGHT PANEL */}
           <div style={{ flex: "2", minWidth: "320px" }}>
 
-            <h3 style={{ color: "#8fa38f", fontSize: "13px", letterSpacing: "1px" }}>RESULTS</h3>
+            <h3 style={{ color: "#5a6a5e", fontSize: "13px", letterSpacing: "1px" }}>RESULTS</h3>
 
             <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "15px", marginTop: "10px" }}>
 
-              <div style={{ background: "#1a2a1e", border: "1px solid #2e4a34", borderRadius: "10px", padding: "20px" }}>
-                <p style={{ color: "#8fa38f", margin: 0, fontSize: "12px", letterSpacing: "1px" }}>💰 GOLD VALUE RECOVERED</p>
-                <p style={{ fontSize: "28px", margin: "10px 0", color: "#e8efe8" }}>{formatR(goldValue)}</p>
-                <p style={{ color: "#8fa38f", margin: 0, fontSize: "13px" }}>{goldGrams} grams Au</p>
+              <div style={{ background: "white", border: "1px solid #e0e6e0", borderRadius: "10px", padding: "20px" }}>
+                <p style={{ color: "#5a6a5e", margin: 0, fontSize: "12px", letterSpacing: "1px" }}>💰 GOLD VALUE RECOVERED</p>
+                <p style={{ fontSize: "28px", margin: "10px 0", color: "#1a2a1e" }}>{formatR(goldValue)}</p>
+                <p style={{ color: "#5a6a5e", margin: 0, fontSize: "13px" }}>{goldGrams} grams Au</p>
               </div>
 
-              <div style={{ background: "#1a2a1e", border: "1px solid #2e4a34", borderRadius: "10px", padding: "20px" }}>
-                <p style={{ color: "#8fa38f", margin: 0, fontSize: "12px", letterSpacing: "1px" }}>🧱 BRICKS PRODUCED</p>
-                <p style={{ fontSize: "28px", margin: "10px 0", color: "#e8efe8" }}>{bricks.toLocaleString()}</p>
-                <p style={{ color: "#8fa38f", margin: 0, fontSize: "13px" }}>≈ {Math.round(bricks / 2000)} houses worth</p>
+              <div style={{ background: "white", border: "1px solid #e0e6e0", borderRadius: "10px", padding: "20px" }}>
+                <p style={{ color: "#5a6a5e", margin: 0, fontSize: "12px", letterSpacing: "1px" }}>🧱 BRICKS PRODUCED</p>
+                <p style={{ fontSize: "28px", margin: "10px 0", color: "#1a2a1e" }}>{bricks.toLocaleString()}</p>
+                <p style={{ color: "#5a6a5e", margin: 0, fontSize: "13px" }}>≈ {Math.round(bricks / 2000)} houses worth</p>
               </div>
 
-              <div style={{ background: "#1a2a1e", border: "1px solid #2e4a34", borderRadius: "10px", padding: "20px" }}>
-                <p style={{ color: "#8fa38f", margin: 0, fontSize: "12px", letterSpacing: "1px" }}>👷 JOBS CREATED</p>
-                <p style={{ fontSize: "28px", margin: "10px 0", color: "#e8efe8" }}>{jobs}</p>
-                <p style={{ color: "#8fa38f", margin: 0, fontSize: "13px" }}>1 job per 180 tonnes</p>
+              <div style={{ background: "white", border: "1px solid #e0e6e0", borderRadius: "10px", padding: "20px" }}>
+                <p style={{ color: "#5a6a5e", margin: 0, fontSize: "12px", letterSpacing: "1px" }}>👷 JOBS CREATED</p>
+                <p style={{ fontSize: "28px", margin: "10px 0", color: "#1a2a1e" }}>{jobs}</p>
+                <p style={{ color: "#5a6a5e", margin: 0, fontSize: "13px" }}>1 job per 180 tonnes</p>
               </div>
 
-              <div style={{ background: "#2e7d5b", border: "1px solid #3e9d6b", borderRadius: "10px", padding: "20px" }}>
-                <p style={{ color: "#c8e6d0", margin: 0, fontSize: "12px", letterSpacing: "1px" }}>💎 TOTAL ECONOMIC VALUE</p>
+              <div style={{ background: "#1a2a1e", border: "1px solid #1a2a1e", borderRadius: "10px", padding: "20px" }}>
+                <p style={{ color: "#8fa38f", margin: 0, fontSize: "12px", letterSpacing: "1px" }}>💎 TOTAL ECONOMIC VALUE</p>
                 <p style={{ fontSize: "28px", margin: "10px 0", color: "white" }}>{formatR(totalValue)}</p>
-                <p style={{ color: "#c8e6d0", margin: 0, fontSize: "13px" }}>{formatR(Math.round(totalValue / tonnes))} per tonne</p>
+                <p style={{ color: "#8fa38f", margin: 0, fontSize: "13px" }}>{formatR(Math.round(totalValue / tonnes))} per tonne</p>
               </div>
 
             </div>
 
-            {/* MATCHED REQUESTS */}
-            <h3 style={{ color: "#8fa38f", fontSize: "13px", letterSpacing: "1px", marginTop: "40px" }}>
+            <h3 style={{ color: "#5a6a5e", fontSize: "13px", letterSpacing: "1px", marginTop: "40px" }}>
               MATCHED RECYCLING REQUESTS FOR THIS WEEK
             </h3>
-            <p style={{ color: "#8fa38f", fontSize: "14px" }}>
+            <p style={{ color: "#5a6a5e", fontSize: "14px" }}>
               Based on your {tonnes.toLocaleString()} tonnes, these companies have sent offers:
             </p>
 
             {matchedCompanies.length === 0 && (
-              <div style={{ background: "#1a2a1e", border: "1px solid #2e4a34", borderRadius: "10px", padding: "20px", color: "#8fa38f" }}>
+              <div style={{ background: "white", border: "1px solid #e0e6e0", borderRadius: "10px", padding: "20px", color: "#5a6a5e" }}>
                 No matching offers for this tonnage yet. Try a different amount.
               </div>
             )}
@@ -200,30 +192,30 @@ function Calculator() {
               const offerValue = company.ratePerTonne * tonnes;
 
               return (
-                <div key={company.id} style={{ background: "#1a2a1e", border: "1px solid #2e4a34", borderRadius: "10px", padding: "20px", marginBottom: "15px" }}>
+                <div key={company.id} style={{ background: "white", border: "1px solid #e0e6e0", borderRadius: "10px", padding: "20px", marginBottom: "15px" }}>
                   <strong>{company.name}</strong>
-                  <p style={{ color: "#8fa38f", margin: "8px 0" }}>
+                  <p style={{ color: "#5a6a5e", margin: "8px 0" }}>
                     Wants: {company.minTonnes.toLocaleString()}–{company.maxTonnes.toLocaleString()} tonnes of {company.request}
                   </p>
 
-                  <div style={{ background: "#0f1a12", border: "1px solid #2e4a34", borderRadius: "6px", padding: "10px 15px", margin: "12px 0", display: "inline-block" }}>
-                    <span style={{ color: "#8fa38f", fontSize: "12px" }}>OFFER: </span>
-                    <span style={{ color: "#6ee7a0", fontSize: "16px", fontWeight: "bold" }}>
+                  <div style={{ background: "#f4f6f8", border: "1px solid #e0e6e0", borderRadius: "6px", padding: "10px 15px", margin: "12px 0", display: "inline-block" }}>
+                    <span style={{ color: "#5a6a5e", fontSize: "12px" }}>OFFER: </span>
+                    <span style={{ color: "#2e7d5b", fontSize: "16px", fontWeight: "bold" }}>
                       {formatR(offerValue)}
                     </span>
-                    <span style={{ color: "#8fa38f", fontSize: "12px" }}>
+                    <span style={{ color: "#5a6a5e", fontSize: "12px" }}>
                       {" "} (R{company.ratePerTonne}/tonne × {tonnes.toLocaleString()}t)
                     </span>
                   </div>
 
                   {status?.status === "accepted" && (
-                    <p style={{ color: "#6ee7a0", margin: "8px 0", fontWeight: "bold" }}>
+                    <p style={{ color: "#2e7d5b", margin: "8px 0", fontWeight: "bold" }}>
                       ✅ Offer accepted at {formatR(status.offer)}. {company.name} has been notified and will contact you within 24 hours to arrange collection.
                     </p>
                   )}
 
                   {status?.status === "declined" && (
-                    <p style={{ color: "#e76e6e", margin: "8px 0", fontWeight: "bold" }}>
+                    <p style={{ color: "#c0392b", margin: "8px 0", fontWeight: "bold" }}>
                       ❌ Offer declined. {company.name} has been notified.
                     </p>
                   )}
@@ -238,7 +230,7 @@ function Calculator() {
                       </button>
                       <button
                         onClick={() => handleDecline(company)}
-                        style={{ padding: "8px 20px", background: "#7d2e2e", color: "white", border: "none", borderRadius: "6px", cursor: "pointer" }}
+                        style={{ padding: "8px 20px", background: "#c0392b", color: "white", border: "none", borderRadius: "6px", cursor: "pointer" }}
                       >
                         DECLINE
                       </button>
