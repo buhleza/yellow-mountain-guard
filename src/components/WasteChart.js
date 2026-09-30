@@ -29,7 +29,7 @@ function WasteChart() {
         pointBackgroundColor: values.map((v, i) =>
           i === values.length - 1 ? "#e74c3c" : "#3eb489"
         ),
-        pointBorderColor: "#0e1621",
+        pointBorderColor: "white",
         pointBorderWidth: 2,
         pointRadius: 6,
         pointHoverRadius: 8,
@@ -59,7 +59,7 @@ function WasteChart() {
         position: "top",
         align: "end",
         labels: {
-          color: "#e8efe8",
+          color: "#1a2a1e",
           usePointStyle: true,
           pointStyle: "line",
           boxWidth: 30,
@@ -68,10 +68,10 @@ function WasteChart() {
         }
       },
       tooltip: {
-        backgroundColor: "#1a2a1e",
-        titleColor: "#e8efe8",
-        bodyColor: "#c0d0c0",
-        borderColor: "#2e4a34",
+        backgroundColor: "white",
+        titleColor: "#1a2a1e",
+        bodyColor: "#5a6a5e",
+        borderColor: "#e0e6e0",
         borderWidth: 1,
         callbacks: {
           label: (context) => ` ${context.parsed.y.toLocaleString()} tonnes`
@@ -80,32 +80,32 @@ function WasteChart() {
     },
     scales: {
       x: {
-        ticks: { color: "#8fa38f", font: { size: 11 } },
-        grid: { color: "rgba(46, 74, 52, 0.4)", drawBorder: false }
+        ticks: { color: "#5a6a5e", font: { size: 11 } },
+        grid: { color: "rgba(208, 216, 208, 0.4)", drawBorder: false }
       },
       y: {
         min: 0,
         max: 36000,
         ticks: {
-          color: "#8fa38f",
+          color: "#5a6a5e",
           font: { size: 11 },
           stepSize: 9000,
           callback: (value) => value === 0 ? "0k" : value / 1000 + "k"
         },
-        grid: { color: "rgba(46, 74, 52, 0.4)", drawBorder: false }
+        grid: { color: "rgba(208, 216, 208, 0.4)", drawBorder: false }
       }
     }
   };
 
   return (
-    <div style={{ background: "#0f1a12", padding: "30px", fontFamily: "Arial", color: "#e8efe8" }}>
+    <div style={{ background: "#f4f6f8", padding: "30px", fontFamily: "Arial", color: "#1a2a1e" }}>
       <div style={{ maxWidth: "900px", margin: "0 auto" }}>
 
-        <div style={{ background: "#111c17", border: "1px solid #1e2e24", borderRadius: "10px", padding: "20px" }}>
-          <p style={{ color: "#e8efe8", margin: "0 0 5px 0", fontWeight: "bold" }}>
+        <div style={{ background: "white", border: "1px solid #e0e6e0", borderRadius: "10px", padding: "20px" }}>
+          <p style={{ color: "#1a2a1e", margin: "0 0 5px 0", fontWeight: "bold" }}>
             WEEKLY WASTE TREND
           </p>
-          <p style={{ color: "#8fa38f", margin: "0 0 20px 0", fontSize: "13px" }}>
+          <p style={{ color: "#5a6a5e", margin: "0 0 20px 0", fontSize: "13px" }}>
             Snake Park vicinity · tonnes per week
           </p>
 
@@ -115,19 +115,19 @@ function WasteChart() {
         </div>
 
         <div style={{ display: "flex", gap: "15px", marginTop: "20px", flexWrap: "wrap" }}>
-          <div style={{ background: "#111c17", border: "1px solid #1e2e24", borderRadius: "10px", padding: "18px", flex: "1", minWidth: "180px" }}>
-            <p style={{ color: "#8fa38f", margin: 0, fontSize: "11px", letterSpacing: "1px" }}>4-WEEK TOTAL</p>
-            <p style={{ fontSize: "22px", margin: "8px 0 0 0", color: "#e8efe8", fontWeight: "bold" }}>85 000t</p>
+          <div style={{ background: "white", border: "1px solid #e0e6e0", borderRadius: "10px", padding: "18px", flex: "1", minWidth: "180px" }}>
+            <p style={{ color: "#5a6a5e", margin: 0, fontSize: "11px", letterSpacing: "1px" }}>4-WEEK TOTAL</p>
+            <p style={{ fontSize: "22px", margin: "8px 0 0 0", color: "#1a2a1e", fontWeight: "bold" }}>85 000t</p>
           </div>
 
-          <div style={{ background: "#111c17", border: "1px solid #1e2e24", borderRadius: "10px", padding: "18px", flex: "1", minWidth: "180px" }}>
-            <p style={{ color: "#8fa38f", margin: 0, fontSize: "11px", letterSpacing: "1px" }}>PEAK WEEK</p>
-            <p style={{ fontSize: "22px", margin: "8px 0 0 0", color: "#e8efe8", fontWeight: "bold" }}>30 000t</p>
+          <div style={{ background: "white", border: "1px solid #e0e6e0", borderRadius: "10px", padding: "18px", flex: "1", minWidth: "180px" }}>
+            <p style={{ color: "#5a6a5e", margin: 0, fontSize: "11px", letterSpacing: "1px" }}>PEAK WEEK</p>
+            <p style={{ fontSize: "22px", margin: "8px 0 0 0", color: "#1a2a1e", fontWeight: "bold" }}>30 000t</p>
           </div>
 
-          <div style={{ background: "#111c17", border: "1px solid #1e2e24", borderRadius: "10px", padding: "18px", flex: "1", minWidth: "180px" }}>
-            <p style={{ color: "#8fa38f", margin: 0, fontSize: "11px", letterSpacing: "1px" }}>WEEKLY AVERAGE</p>
-            <p style={{ fontSize: "22px", margin: "8px 0 0 0", color: "#e8efe8", fontWeight: "bold" }}>21 250t</p>
+          <div style={{ background: "white", border: "1px solid #e0e6e0", borderRadius: "10px", padding: "18px", flex: "1", minWidth: "180px" }}>
+            <p style={{ color: "#5a6a5e", margin: 0, fontSize: "11px", letterSpacing: "1px" }}>WEEKLY AVERAGE</p>
+            <p style={{ fontSize: "22px", margin: "8px 0 0 0", color: "#1a2a1e", fontWeight: "bold" }}>21 250t</p>
           </div>
         </div>
 
