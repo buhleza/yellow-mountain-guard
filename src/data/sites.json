@@ -1,0 +1,46 @@
+[
+  {
+    "id": "snake-park",
+    "name": "Snake Park",
+    "location": "Soweto, Gauteng",
+    "residents": 50000,
+
+    "mineDump": {
+      "lat": -26.2708,
+      "lng": 27.8586
+    },
+
+    "township": {
+      "lat": -26.268,
+      "lng": 27.864
+    },
+
+    "sensors": [
+      {
+        "id": "dobsonville-east",
+        "name": "Dobsonville East",
+        "lat": -26.2695,
+        "lng": 27.8655,
+
+        "readings": {
+          "pm10": 34,
+          "pm25": 8,
+          "arsenic": 0.01
+        }
+      },
+
+      {
+        "id": "snake-park-primary",
+        "name": "Snake Park Primary",
+        "lat": -26.2685,
+        "lng": 27.863,
+
+        "readings": {
+          "pm10": 28,
+          "pm25": 7,
+          "arsenic": 0.01
+        }
+      }
+    ]
+  }
+]

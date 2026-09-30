@@ -1,38 +1,166 @@
-.App {
-  text-align: center;
+/* =========================================================
+   GLOBAL SIZING
+   ========================================================= */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+html,
+body,
+#root {
+  margin: 0;
+  padding: 0;
+
+  width: 100%;
+  min-height: 100%;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+body {
+  overflow-x: hidden;
 }
 
-.App-header {
-  background-color: #282c34;
+
+/* =========================================================
+   APPLICATION SHELL
+   ========================================================= */
+
+.app {
+  width: 100%;
   min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+
+  background-color: #f3f6fa;
 }
 
-.App-link {
-  color: #61dafb;
+
+/*
+   The sidebar is fixed and is exactly 244px wide.
+
+   Because a fixed element is removed from normal document
+   flow, the main content must explicitly begin 244px from
+   the left side of the browser.
+*/
+
+.main-content {
+  position: relative;
+
+  margin-left: 244px;
+
+  width: calc(100vw - 244px);
+  max-width: calc(100vw - 244px);
+
+  min-width: 0;
+  min-height: 100vh;
+
+  padding: 20px 22px 30px;
+
+  overflow-x: hidden;
+
+  background-color: #f3f6fa;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+
+/*
+   IMPORTANT:
+
+   Every direct page rendered inside main-content must remain
+   inside the space allocated to main-content.
+*/
+
+.main-content > * {
+  width: 100%;
+  max-width: 100%;
+
+  min-width: 0;
+}
+
+
+/* =========================================================
+   DRONE DASHBOARD CONTAINMENT
+   ========================================================= */
+
+.main-content .drone-dashboard {
+  position: relative;
+
+  width: 100%;
+  max-width: 100%;
+
+  min-width: 0;
+
+  margin: 0;
+
+  overflow: hidden;
+}
+
+
+/*
+   Prevent any major Drone Dashboard section from becoming
+   wider than its parent.
+*/
+
+.main-content .drone-header,
+.main-content .status-banner,
+.main-content .drone-main-grid,
+.main-content .event-log {
+  width: 100%;
+  max-width: 100%;
+
+  min-width: 0;
+
+  margin-left: 0;
+  margin-right: 0;
+}
+
+
+/* =========================================================
+   GENERAL PAGE HEADINGS
+   ========================================================= */
+
+.main-content h1 {
+  margin: 0;
+
+  font-size: 20px;
+
+  color: #172338;
+}
+
+.main-content p {
+  color: #71809a;
+
+  margin-top: 5px;
+}
+
+
+/* =========================================================
+   PLACEHOLDER DASHBOARDS
+   ========================================================= */
+
+.placeholder-dashboard {
+  margin-top: 30px;
+
+  padding: 40px;
+
+  background-color: white;
+
+  border: 1px solid #dce3eb;
+  border-radius: 10px;
+
+  text-align: center;
+
+  color: #71809a;
+}
+
+
+/* =========================================================
+   RESPONSIVE
+   ========================================================= */
+
+@media (max-width: 900px) {
+
+  .main-content {
+    padding: 18px;
   }
-  to {
-    transform: rotate(360deg);
-  }
+
 }
