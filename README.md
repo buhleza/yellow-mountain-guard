@@ -6,19 +6,13 @@ The platform brings together environmental monitoring, risk assessment, drone-re
 
 ## The Problem
 
-Mining waste sites located near communities can create ongoing environmental-management challenges.
+In Snake Park, Soweto, 50,000 people live next to a toxic gold mine dump known as the "Yellow Mountain." It contains arsenic, lead, and uranium. When the wind blows, dust carries these poisons into homes and schools.
 
-These challenges include:
+Children are born with cerebral palsy. Many suffer from chronic asthma, coughing, and eye problems. The mining company says cleanup will take up to 10 years. The community cannot wait.
 
-- Monitoring airborne pollutants and other environmental indicators.
-- Identifying when environmental conditions may pose a risk to nearby communities.
-- Responding quickly when dangerous conditions develop.
-- Understanding whether mining waste has potential economic value through reprocessing.
-- Providing communities with accessible information about environmental conditions around them.
+This is not an isolated case. There are over **6,000 abandoned mines across South Africa**, with at least **2,322 classified as high-risk** for nearby communities. Between **15 and 20 million South Africans** live near similar toxic pollution.
 
-These activities are often treated separately.
-
-Sentinel explores how they could be connected through a single digital platform.
+Sentinel is our response: a three-part system that protects people today, proves the waste is profitable to recycle, and prevents this from happening again.
 
 ## Our Solution
 
