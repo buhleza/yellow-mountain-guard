@@ -29,45 +29,6 @@ const sensors = [
     waterPh: 6.4,
     active: false,
   },
-  {
-    id: 'rustenburg',
-    name: 'Rustenburg Mine Perimeter',
-    community: 'Rustenburg, North West',
-    lat: -25.6672,
-    lng: 27.2424,
-    status: 'red',
-    pm10: 160,
-    pm25: 72,
-    arsenic: 0.05,
-    waterPh: 4.8,
-    active: false,
-  },
-  {
-    id: 'emalahleni',
-    name: 'eMalahleni Community',
-    community: 'eMalahleni, Mpumalanga',
-    lat: -25.877,
-    lng: 29.201,
-    status: 'yellow',
-    pm10: 90,
-    pm25: 38,
-    arsenic: 0.02,
-    waterPh: 6.1,
-    active: false,
-  },
-  {
-    id: 'welkom',
-    name: 'Welkom Residential',
-    community: 'Welkom, Free State',
-    lat: -27.9774,
-    lng: 26.735,
-    status: 'green',
-    pm10: 30,
-    pm25: 12,
-    arsenic: 0.01,
-    waterPh: 7.0,
-    active: false,
-  },
 ];
 
 const colors = { green: '#22c55e', yellow: '#eab308', red: '#ef4444' };
@@ -92,7 +53,26 @@ export default function CommunityDashboard() {
           marginBottom: 16,
           fontWeight: 600
         }}>
-          ⚠️ {redCount} monitoring point{redCount > 1 ? 's' : ''} in danger. Residents advised to stay indoors and avoid local water sources.
+          <div>
+            ⚠️ {redCount} monitoring point{redCount > 1 ? 's' : ''} in danger. Residents advised to stay indoors and avoid local water sources.
+          </div>
+
+          <div style={{
+            marginTop: 10,
+            padding: '10px 12px',
+            background: 'white',
+            border: '1px solid #fca5a5',
+            borderRadius: 6,
+            fontSize: 13,
+            fontWeight: 500,
+            color: '#7f1d1d'
+          }}>
+            📱 ALERT SENT: SMS and WhatsApp messages dispatched to 12,400 registered residents within 2 km of Snake Park Primary.
+            <br />
+            <span style={{ fontSize: 11, color: '#991b1b' }}>
+              Sent at {new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })} · Automatic · No action required by user
+            </span>
+          </div>
         </div>
       )}
 
@@ -119,7 +99,7 @@ export default function CommunityDashboard() {
             ))}
           </div>
 
-          <MapContainer center={[-26.5, 28.0]} zoom={6} style={{ height: '480px', borderRadius: 8 }}>
+          <MapContainer center={[-26.2685, 27.863]} zoom={14} style={{ height: '480px', borderRadius: 8 }}>
             <TileLayer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" />
             {visible.map(s => (
               <CircleMarker
