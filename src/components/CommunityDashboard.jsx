@@ -3,13 +3,13 @@ import 'leaflet/dist/leaflet.css';
 import { useState } from 'react';
 
 const sensors = [
-  // ============ RED ============
+  
   {
     id: 'snake-park-primary',
     name: 'Snake Park Primary',
     community: 'Snake Park, Soweto',
     lat: -26.2685,
-    lng: 27.863,
+    lng: 27.8630,
     status: 'red',
     pm10: 145,
     pm25: 68,
@@ -21,8 +21,8 @@ const sensors = [
     id: 'mountain-view-clinic',
     name: 'Mountain View Clinic',
     community: 'Snake Park, Soweto',
-    lat: -26.2655,
-    lng: 27.8605,
+    lat: -26.2672,
+    lng: 27.8648,
     status: 'red',
     pm10: 132,
     pm25: 61,
@@ -31,7 +31,7 @@ const sensors = [
     active: false,
   },
 
-  // ============ YELLOW ============
+  
   {
     id: 'dobsonville-east',
     name: 'Dobsonville East',
@@ -49,7 +49,7 @@ const sensors = [
     id: 'snake-park-station',
     name: 'Snake Park Station',
     community: 'Snake Park, Soweto',
-    lat: -26.2715,
+    lat: -26.2705,
     lng: 27.8615,
     status: 'yellow',
     pm10: 82,
@@ -59,7 +59,7 @@ const sensors = [
     active: false,
   },
 
-  // ============ GREEN ============
+  
   {
     id: 'diepkloof-community',
     name: 'Diepkloof Community Hall',
@@ -74,11 +74,11 @@ const sensors = [
     active: false,
   },
   {
-    id: 'orlando-stadium',
-    name: 'Orlando Stadium Precinct',
-    community: 'Soweto, Gauteng',
-    lat: -26.2325,
-    lng: 27.8445,
+    id: 'snake-park-east-clinic',
+    name: 'Snake Park East Clinic',
+    community: 'Snake Park, Soweto',
+    lat: -26.2678,
+    lng: 27.8668,
     status: 'green',
     pm10: 32,
     pm25: 13,
@@ -87,7 +87,6 @@ const sensors = [
     active: false,
   },
 ];
-
 const colors = { green: '#22c55e', yellow: '#eab308', red: '#ef4444' };
 
 export default function CommunityDashboard() {
@@ -96,7 +95,7 @@ export default function CommunityDashboard() {
 
   const visible = filter === 'all' ? sensors : sensors.filter(s => s.status === filter);
 
-  // Red count is now based on what is currently visible, not the full list.
+  
   const redCount = visible.filter(s => s.status === 'red').length;
   const activeSite = sensors.find(s => s.active);
 
@@ -158,7 +157,7 @@ export default function CommunityDashboard() {
             ))}
           </div>
 
-          <MapContainer center={[-26.2685, 27.863]} zoom={14} style={{ height: '480px', borderRadius: 8 }}>
+          <MapContainer center={[-26.2685, 27.863]} zoom={16} style={{ height: '480px', borderRadius: 8 }}>
             <TileLayer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" />
             {visible.map(s => (
               <CircleMarker
