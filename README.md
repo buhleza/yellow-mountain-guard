@@ -1,6 +1,6 @@
 # Sentinel — Environmental Guard
 
-Sentinel is an environmental monitoring and response platform designed to support communities and organisations managing environmental risks associated with mining waste.
+Sentinel is a community-first environmental monitoring and response platform built for Snake Park, Soweto — where 50,000 people live next to a toxic gold mine dump. The system protects residents today, proves the waste is profitable to recycle, and locks the evidence for accountability.
 
 The platform brings together environmental monitoring, risk assessment, drone-response simulation, waste reprocessing analysis, and community-facing environmental information in one system.
 
@@ -54,8 +54,9 @@ It provides estimates relating to:
 - Brick production
 - Employment opportunities
 - Waste-processing trends
+- Matched recycling companies who want to buy the waste
 
-The purpose is to demonstrate that mining waste can be considered not only as an environmental liability, but also as a potential source of recoverable material and economic activity.
+The purpose is to demonstrate that mining waste can be considered not only as an environmental liability, but also as a potential source of recoverable material and economic activity. The mine reviews each offer and clicks Accept or Decline — proving that recycling is profitable.
 
 ###  PREVENT — Community Monitor
 
@@ -71,6 +72,7 @@ The module is designed around information such as:
 - Monitoring locations
 - Incident information
 
+When red sensors are detected, the system sends automatic SMS and WhatsApp alerts to 12,400 registered residents within 2 km of the affected sensor.
 
 ## Current Prototype
 
