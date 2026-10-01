@@ -97,7 +97,7 @@ export default function CommunityDashboard() {
       )}
 
       <div style={{ display: 'flex', gap: 20, alignItems: 'flex-start', flexWrap: 'wrap' }}>
-        <div style={{ flex: '1 1 600px', minWidth: 300 }}>
+        <div style={{ flex: '1 1 480px', minWidth: 280 }}>
           <div style={{ marginBottom: 12 }}>
             {['all', 'green', 'yellow', 'red'].map(f => (
               <button
