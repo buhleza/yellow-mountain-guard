@@ -4,6 +4,7 @@ import Navigation from "./components/Navigation";
 import Calculator from "./components/Calculator";
 import WasteChart from "./components/WasteChart";
 import DroneDashboard from "./components/DroneDashboard";
+import CommunityDashboard from "./components/CommunityDashboard";
 import "./App.css";
 
 function App() {
@@ -37,9 +38,7 @@ function App() {
           <h1>Community Monitor</h1>
           <p>Air quality & alerts</p>
 
-          <div className="placeholder-dashboard">
-            Community Monitor coming soon...
-          </div>
+          <CommunityDashboard />
         </div>
       );
     }
