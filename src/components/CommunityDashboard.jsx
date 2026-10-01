@@ -3,6 +3,7 @@ import 'leaflet/dist/leaflet.css';
 import { useState } from 'react';
 
 const sensors = [
+  // ============ RED ============
   {
     id: 'snake-park-primary',
     name: 'Snake Park Primary',
@@ -17,6 +18,21 @@ const sensors = [
     active: true,
   },
   {
+    id: 'mountain-view-clinic',
+    name: 'Mountain View Clinic',
+    community: 'Snake Park, Soweto',
+    lat: -26.2655,
+    lng: 27.8605,
+    status: 'red',
+    pm10: 132,
+    pm25: 61,
+    arsenic: 0.038,
+    waterPh: 5.4,
+    active: false,
+  },
+
+  // ============ YELLOW ============
+  {
     id: 'dobsonville-east',
     name: 'Dobsonville East',
     community: 'Snake Park, Soweto',
@@ -29,6 +45,47 @@ const sensors = [
     waterPh: 6.4,
     active: false,
   },
+  {
+    id: 'snake-park-station',
+    name: 'Snake Park Station',
+    community: 'Snake Park, Soweto',
+    lat: -26.2715,
+    lng: 27.8615,
+    status: 'yellow',
+    pm10: 82,
+    pm25: 35,
+    arsenic: 0.022,
+    waterPh: 6.2,
+    active: false,
+  },
+
+  // ============ GREEN ============
+  {
+    id: 'diepkloof-community',
+    name: 'Diepkloof Community Hall',
+    community: 'Snake Park, Soweto',
+    lat: -26.2660,
+    lng: 27.8595,
+    status: 'green',
+    pm10: 28,
+    pm25: 11,
+    arsenic: 0.005,
+    waterPh: 7.1,
+    active: false,
+  },
+  {
+    id: 'orlando-stadium',
+    name: 'Orlando Stadium Precinct',
+    community: 'Soweto, Gauteng',
+    lat: -26.2325,
+    lng: 27.8445,
+    status: 'green',
+    pm10: 32,
+    pm25: 13,
+    arsenic: 0.006,
+    waterPh: 7.0,
+    active: false,
+  },
 ];
 
 const colors = { green: '#22c55e', yellow: '#eab308', red: '#ef4444' };
@@ -38,7 +95,9 @@ export default function CommunityDashboard() {
   const [selected, setSelected] = useState(null);
 
   const visible = filter === 'all' ? sensors : sensors.filter(s => s.status === filter);
-  const redCount = sensors.filter(s => s.status === 'red').length;
+
+  // Red count is now based on what is currently visible, not the full list.
+  const redCount = visible.filter(s => s.status === 'red').length;
   const activeSite = sensors.find(s => s.active);
 
   return (
@@ -67,7 +126,7 @@ export default function CommunityDashboard() {
             fontWeight: 500,
             color: '#7f1d1d'
           }}>
-            📱 ALERT SENT: SMS and WhatsApp messages dispatched to 12,400 registered residents within 2 km of Snake Park Primary.
+            📱 ALERT SENT: SMS and WhatsApp messages dispatched to 12,400 registered residents within 2 km of Snake Park Primary and Mountain View Clinic.
             <br />
             <span style={{ fontSize: 11, color: '#991b1b' }}>
               Sent at {new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })} · Automatic · No action required by user
